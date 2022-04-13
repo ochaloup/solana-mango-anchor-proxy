@@ -203,7 +203,7 @@ pub fn place_perp_order<'info>(
         None,  // expiry_timestamp, 0 to ignore time in force
         20,  //limit: no limit, max 8byte unsigned, TODO: hardcoding something here right now
     ).unwrap();
-    msg!("Going to invoke instruction: {:?}", instruction);
+    // msg!("Going to invoke instruction: {:?}", instruction);
     let account_infos_vec = vec![
         ctx.accounts.mango_group.clone(),
         ctx.accounts.mango_account.clone(),
@@ -216,7 +216,7 @@ pub fn place_perp_order<'info>(
         ctx.accounts.mango_account.clone(),  // referall, curently just the mango account
     ];
     // account_infos_vec.append(&mut ctx.remaining_accounts.clone().to_vec());
-    msg!("Accounts to be used: {:?}", account_infos_vec);
+    // msg!("Accounts to be used: {:?}", account_infos_vec);
     solana_program::program::invoke(
         &instruction,
         &account_infos_vec.as_slice(),
