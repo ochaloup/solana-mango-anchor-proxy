@@ -1,0 +1,27 @@
+[package]
+name = "market-contract"
+version = "0.0.1"
+description = "Contract to work with ChainKeepers marketmaker"
+rust-version = "1.56"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "market_contract"
+
+[features]
+no-entrypoint = []
+cpi = ["no-entrypoint"]
+# TODO: find out what the no-idl/no-log means
+no-idl = []
+no-log-ix-name = []
+default = ["development"] # `anchor build -- --no-default-features --features production` to override
+production = []
+development = []
+
+
+[dependencies]
+anchor-lang = "0.22.1"
+solana-program = ">=1.9.0, <1.10.0"
+mango = { git = "https://github.com/blockworks-foundation/mango-v3.git", default-features = false, features = ["no-entrypoint"] }
+mango-common = { git = "https://github.com/blockworks-foundation/mango-v3.git" }

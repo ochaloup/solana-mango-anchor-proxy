@@ -1,0 +1,15 @@
+[features]
+seeds = false
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.localnet]
+market_contract = "B8hvuv3LXchAe4Wm5EVAKUntUsymGyAh1n8dfM5KuR3d"
+
+[programs.devnet]
+market_contract = "B8hvuv3LXchAe4Wm5EVAKUntUsymGyAh1n8dfM5KuR3d"
+
+[scripts]
+test = "python -m pytest"
